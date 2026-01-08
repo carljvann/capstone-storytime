@@ -1,6 +1,0 @@
-# Ignore all files in uploads except .gitkeep
-uploads/*
-!uploads/.gitkeep
-uploads/temp/*
-!uploads/temp/.gitkeep
-node_modules
