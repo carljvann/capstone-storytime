@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000", 
-      "https://696184de5f419a39cb9ba36b--daimastorytime.netlify.app/", 
+      "https://daimastorytime.netlify.app/", 
     ],
     credentials: true,
   })
