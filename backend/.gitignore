@@ -3,3 +3,4 @@ uploads/*
 !uploads/.gitkeep
 uploads/temp/*
 !uploads/temp/.gitkeep
+node_modules
