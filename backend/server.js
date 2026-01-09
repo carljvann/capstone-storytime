@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 5001;
 app.use(
   cors({
     origin: [
-      "http://localhost:3000", // Local development
-      "https://YOUR-NETLIFY-URL.netlify.app", // Replace with your actual URL
+      "http://localhost:3000", 
+      "https://696184de5f419a39cb9ba36b--daimastorytime.netlify.app/", 
     ],
     credentials: true,
   })
