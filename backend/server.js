@@ -1,10 +1,27 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
 
 const authRoutes = require("./routes/auth");
 const voiceRoutes = require("./routes/voices");
 const audioRoutes = require("./routes/audio");
+
+// Create upload directories if they don't exist
+const uploadDirs = [
+  'uploads/temp',
+  'uploads/voices',
+  'uploads/audio'
+];
+
+uploadDirs.forEach(dir => {
+  const fullPath = path.join(__dirname, dir);
+  if (!fs.existsSync(fullPath)) {
+    fs.mkdirSync(fullPath, { recursive: true });
+    console.log(`✅ Created directory: ${dir}`);
+  }
+});
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -62,7 +79,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log("\nServer running on port " + PORT);
+  console.log("\n✅ Server running on port " + PORT);
   console.log("Environment: " + (process.env.NODE_ENV || "development"));
   console.log("Local: http://localhost:" + PORT);
 });
